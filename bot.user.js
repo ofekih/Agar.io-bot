@@ -7,7 +7,6 @@
 // @author      ofekih
 // ==/UserScript==
 
-var aposBotVersion = 3.551;
 
 //TODO: Team mode
 //      Detect when people are merging
@@ -208,7 +207,6 @@ var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
                     //IT'S FOOD!
                     foodElementList.push(listToUse[element]);
                     
-
                     if (isSplitTarget(blob, listToUse[element])) {
                         console.log("Split target!");
                         drawCircle(listToUse[element].x, listToUse[element].y, listToUse[element].size + 50, 4);
