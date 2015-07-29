@@ -167,9 +167,9 @@ var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
     }
 
     function isSplitTarget(blob, cell) {
-        /*if (canSplit(cell, blob)) {
+        if (canSplit(cell, blob)) {
             return true;
-        }*/
+        }
         return false;
     }
 
@@ -207,6 +207,8 @@ var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
                 if (isFood(blob, listToUse[element])) {
                     //IT'S FOOD!
                     foodElementList.push(listToUse[element]);
+                    
+                    console.log("FOOOD");
 
                     if (isSplitTarget(blob, listToUse[element])) {
                         console.log("Split target!");
