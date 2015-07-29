@@ -44,7 +44,7 @@ var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
     f.botList.push(["OfekBot ", findDestination]);
 
     var bList = g('#bList');
-    g('<option />', {value: (f.botList.length - 1), text: "AposBot"}).appendTo(bList);
+    g('<option />', {value: (f.botList.length - 1), text: "OfekBot"}).appendTo(bList);
 
     //Given an angle value that was gotten from valueAndleBased(),
     //returns a new value that scales it appropriately.
