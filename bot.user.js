@@ -208,10 +208,10 @@ var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
                     foodElementList.push(listToUse[element]);
                     
                     if (isSplitTarget(blob, listToUse[element])) {
-                        console.log("Split target!");
-                        drawCircle(listToUse[element].x, listToUse[element].y, listToUse[element].size + 50, 4);
+                        drawCircle(listToUse[element].x, listToUse[element].y, listToUse[element].size + 50, 7);
                         splitTargetList.push(listToUse[element])
                     }
+                    else drawCircle(listToUse[element].x, listToUse[element].y, listToUse[element].size + 50, 4);
                 } else if (isThreat(blob, listToUse[element])) {
                     //IT'S DANGER!
                     threatList.push(listToUse[element]);
