@@ -207,8 +207,6 @@ var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
                     //IT'S FOOD!
                     foodElementList.push(listToUse[element]);
                     
-                    console.log("Stop saying food!")
-                    
                     if (isSplitTarget(blob, listToUse[element])) {
                         console.log("Split target!");
                         drawCircle(listToUse[element].x, listToUse[element].y, listToUse[element].size + 50, 4);
