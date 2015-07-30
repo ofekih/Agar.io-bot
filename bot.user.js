@@ -208,7 +208,7 @@ var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
                     foodElementList.push(listToUse[element]);
                     
                     if (isSplitTarget(blob, listToUse[element])) {
-                        drawCircle(listToUse[element].x, listToUse[element].y, listToUse[element].size + 50, 7);
+                        drawCircle(listToUse[element].x, listToUse[element].y, listToUse[element].size + 50, 5);
                         splitTargetList.push(listToUse[element])
                     }
                     else drawCircle(listToUse[element].x, listToUse[element].y, listToUse[element].size + 20, 4);
