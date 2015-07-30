@@ -25,7 +25,6 @@ function getLatestCommit() {
             dataType: "jsonp"
         }).done(function(data) {
             console.dir(data["data"])
-            console.log("hmm: " + data["data"]["object"]["sha"]);
             sha = data["data"]["object"]["sha"];
 
             function update(prefix, name, url) {
@@ -50,29 +49,24 @@ function getLatestCommit() {
                 if (latestVersion > myVersion) {
                     update("aposLauncher", "launcher.user.js", "https://github.com/Apostolique/Agar.io-bot/blob/" + sha + "/launcher.user.js/");
                 }
-                console.log('Current launcher.user.js Version: ' + myVersion + " on Github: " + latestVersion);
             });
 
         }).fail(function() {});
 }
 getLatestCommit();
 
-console.log("Running Bot Launcher!");
 (function(d, e) {
 
     //UPDATE
     function keyAction(e) {
         if (84 == e.keyCode) {
-            console.log("Toggle");
             toggle = !toggle;
         }
         if (82 == e.keyCode) {
-            console.log("ToggleDraw");
             toggleDraw = !toggleDraw;
         }
         if (83 == e.keyCode) {
             selectedCell = (selectedCell + 1).mod(getPlayer().length + 1);
-            console.log("Next Cell " + selectedCell);
         }
         if (68 == e.keyCode) {
             window.setDarkTheme(!getDarkBool());
@@ -91,7 +85,6 @@ console.log("Running Bot Launcher!");
             }
         }
         if (81 == e.keyCode) {
-            console.log("ToggleFollowMouse");
             toggleFollow = !toggleFollow;
         }
     }
@@ -304,7 +297,6 @@ console.log("Running Bot Launcher!");
 
     function Za() {
         var a = ++Ba;
-        console.log("Find " + y + P);
         e.ajax("https://m.agar.io/", {
             error: function() {
                 setTimeout(Za, 1E3)
@@ -355,14 +347,12 @@ console.log("Running Bot Launcher!");
         z = A = null;
         R = 0;
         $ = !1;
-        console.log("Connecting to " + a);
         //UPDATE
         serverIP = a;
         q = new WebSocket(a);
         q.binaryType = "arraybuffer";
         q.onopen = function() {
             var a;
-            console.log("socket open");
             a = N(5);
             a.setUint8(0, 254);
             a.setUint32(1, 4, !0);
@@ -394,7 +384,6 @@ console.log("Running Bot Launcher!");
 
     function vb() {
         $ && (ma = 500);
-        console.log("socket close");
         setTimeout(I, ma);
         ma *= 2
     }
@@ -632,12 +621,10 @@ console.log("Running Bot Launcher!");
 
         //UPDATE
         if (getPlayer().length == 0 && !reviving && ~~(getCurrentScore() / 100) > 0) {
-            console.log("Dead: " + ~~(getCurrentScore() / 100));
             apos('send', 'pageview');
         }
 
         if (getPlayer().length == 0) {
-            console.log("Revive");
             setNick(originalName);
             reviving = true;
         } else if (getPlayer().length > 0 && reviving) {
@@ -670,7 +657,6 @@ console.log("Running Bot Launcher!");
     }
 
     window.opCode = function(a) {
-        console.log("Sending op code.");
         H(parseInt(a));
     }
 
@@ -1814,7 +1800,6 @@ console.log("Running Bot Launcher!");
                 }
 
                 window.setBotIndex = function(a) {
-                    console.log("Changing bot");
                     botIndex = a;
                 }
 
@@ -1835,7 +1820,7 @@ console.log("Running Bot Launcher!");
                             d.requestAnimationFrame(Ua);
                             var c = Date.now(),
                                 l = c - a;
-                            l > b && (a = c - l % b, !T() || 240 > Date.now() - bb ? gb() : console.warn("Skipping draw"), Fb())
+                            l > b && (a = c - l % b, !T() || gb(), Fb())
                         }
                     }(),
                     U = {},
